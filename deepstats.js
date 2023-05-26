@@ -554,6 +554,7 @@ function createStatAccordion() {
 
 function InitGui()
 {
+    acc.innerHTML = '';
     for (p in cats) {
         if (p == "0") continue; // skip rare for now
         //createCard(acc, cats[p], parseInt(p));
@@ -623,4 +624,14 @@ function InitGui()
 window.onload = function(){
     acc = document.getElementById("parseAccordion");
     
+    // let container = document.createElement('div');
+    // container.id = "dataContainer"
+    // acc.appendChild(container);
+    // acc = container;
+
+    for (e in entryNames)
+    {
+        parsedData[entryNames[e]] = 0;
+    }
+    InitGui();
 }
