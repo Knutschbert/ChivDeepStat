@@ -26,9 +26,11 @@ let rareStats = [
     "CommonKillingSprees",
     "CommonMultiKills",
     "MatchesCompletedLastTeamStanding",
-    "MatchesCompletedFreeForAll",
     "MatchesCompletedBrawl",
     "MatchesCompletedArena",
+    "CommonVoteKickSeverity",
+    "CommonVoteKickTime",
+    "CommonAchievementProgressEx"
 ];
 
 let cats = [
@@ -446,6 +448,8 @@ function createStatAccordion() {
                             // slice?
                             if (r == "0") continue;
                             let card = createCard(cardBody, subclasses[c][r], []);
+                            if (c == "0")
+                                card.classList.add('c_rare_stat');
                             let footer = document.createElement('div');
                             footer.className = 'card-footer';
                             card.appendChild(footer);
